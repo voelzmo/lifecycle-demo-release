@@ -1,4 +1,4 @@
-check process dummy
+check process demo
   with pidfile /var/vcap/sys/run/demo/pid
   start program "/var/vcap/jobs/demo/bin/demo_ctl start"
   stop program "/var/vcap/jobs/demo/bin/demo_ctl stop"
