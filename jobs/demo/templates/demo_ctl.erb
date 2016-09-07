@@ -1,0 +1,30 @@
+#!/bin/bash
+
+JOB_NAME=demo
+RUN_DIR=/var/vcap/sys/run/$JOB_NAME
+LOG_DIR=/var/vcap/sys/log/$JOB_NAME
+PIDFILE=${RUN_DIR}/pid
+
+case $1 in
+
+  start)
+    mkdir -p $RUN_DIR $LOG_DIR
+    chown -R vcap:vcap $RUN_DIR $LOG_DIR
+
+    echo 1 > $PIDFILE
+
+    echo "[`date +\"%Y-%m-%d %H:%M:%S%z\"`] job <%= spec.name %>/<%= spec.id %> starting..." > $LOG_DIR/$JOB_NAME.stdout.log
+
+    # put your process here
+    ;;
+
+  stop)
+    kill -9 `cat $PIDFILE`
+    rm -f $PIDFILE
+
+    ;;
+
+  *)
+    echo "Usage: ctl {start|stop}" ;;
+
+esac
