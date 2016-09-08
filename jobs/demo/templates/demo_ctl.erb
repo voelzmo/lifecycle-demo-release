@@ -9,7 +9,7 @@ case $1 in
 
   start)
     mkdir -p $RUN_DIR $LOG_DIR
-    chown -R vcap:vcap $RUN_DIR $LOG_DIR
+    chown vcap:vcap $RUN_DIR $LOG_DIR
 
     echo 1 > $PIDFILE
 
