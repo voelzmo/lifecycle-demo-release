@@ -1,0 +1,5 @@
+check process demo2
+  with pidfile /var/vcap/sys/run/demo2/pid
+  start program "/var/vcap/jobs/demo2/bin/demo_ctl start"
+  stop program "/var/vcap/jobs/demo2/bin/demo_ctl stop"
+  group vcap

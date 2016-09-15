@@ -1,0 +1,12 @@
+---
+name: demo2
+templates:
+  demo_ctl.erb: bin/demo_ctl
+  pre-start.erb: bin/pre-start
+  post-start.erb: bin/post-start
+  post-deploy.erb: bin/post-deploy
+  drain.erb: bin/drain
+
+packages:
+
+properties: {}

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+JOB_NAME=demo2
+RUN_DIR=/var/vcap/sys/run/$JOB_NAME
+LOG_DIR=/var/vcap/sys/log/$JOB_NAME
+
+echo "[`date +\"%Y-%m-%d %H:%M:%S%z\"`] drain script running for <%= spec.name %>/<%= spec.id %>" >> $LOG_DIR/drain.log
+echo "[`date +\"%Y-%m-%d %H:%M:%S%z\"`] job is transitioning from $BOSH_JOB_STATE to $BOSH_JOB_NEXT_STATE" >> $LOG_DIR/drain.log
+
+echo 0
+exit 0
